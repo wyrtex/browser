@@ -1,0 +1,72 @@
+name: Browser
+options:
+  bundleIdPrefix: com.wyrtex
+  deploymentTarget:
+    iOS: "15.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    SWIFT_STRICT_CONCURRENCY: minimal
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+targets:
+  Browser:
+    type: application
+    platform: iOS
+    sources:
+      - path: Browser
+        excludes:
+          - "Web"
+          - "Web/**"
+      - path: Browser/Web
+        type: folder
+        buildPhase: resources
+    info:
+      path: Browser/Info.plist
+      properties:
+        CFBundleDisplayName: Browser
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        LSRequiresIPhoneOS: true
+        UILaunchScreen: {}
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+          UISceneConfigurations:
+            UIWindowSceneSessionRoleApplication:
+              - UISceneConfigurationName: Default Configuration
+                UISceneDelegateClassName: $(PRODUCT_MODULE_NAME).SceneDelegate
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        NSAppTransportSecurity:
+          NSAllowsArbitraryLoads: true
+          NSAllowsArbitraryLoadsInWebContent: true
+        NSCameraUsageDescription: Websites may ask to use the camera.
+        NSMicrophoneUsageDescription: Websites may ask to use the microphone.
+        NSLocationWhenInUseUsageDescription: Websites may ask for your location.
+        NSPhotoLibraryAddUsageDescription: Save images from websites.
+        ITSAppUsesNonExemptEncryption: false
+        CFBundleURLTypes:
+          - CFBundleURLName: com.wyrtex.devbrowser
+            CFBundleURLSchemes:
+              - devbrowser
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.wyrtex.devbrowser
+        PRODUCT_NAME: Browser
+        TARGETED_DEVICE_FAMILY: "1,2"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        CODE_SIGN_STYLE: Manual
+        CODE_SIGN_IDENTITY: ""
+        CODE_SIGNING_REQUIRED: "NO"
+        CODE_SIGNING_ALLOWED: "NO"
+        DEVELOPMENT_TEAM: ""
+        ENABLE_BITCODE: "NO"
+    scheme: {}

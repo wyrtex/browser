@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>DevTools</title>
+<link rel="stylesheet" href="devtools.css">
+</head>
+<body>
+<div id="app">
+  <header id="toolbar">
+    <button class="tb-btn" id="btn-inspect" title="Select an element in the page to inspect it (⌘⇧C)">
+      <svg viewBox="0 0 20 20" width="17" height="17"><path d="M3 3h11v4h-1.5V4.5h-8v8H7V14H3z" fill="currentColor"/><path d="M9 8l9 3.6-3.8 1.3 3 3-1.3 1.3-3-3L11.6 18z" fill="currentColor"/></svg>
+    </button>
+    <button class="tb-btn" id="btn-device" title="Toggle device toolbar: desktop / mobile site">
+      <svg viewBox="0 0 20 20" width="17" height="17"><rect x="1.5" y="3" width="12" height="9" rx="1" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5 15h5" stroke="currentColor" stroke-width="1.5"/><rect x="13" y="7" width="6" height="11" rx="1.2" fill="var(--bg2)" stroke="currentColor" stroke-width="1.5"/></svg>
+    </button>
+    <div class="tb-sep"></div>
+    <nav id="tabs"></nav>
+    <div class="tb-right">
+      <button id="badge-errors" class="badge err" hidden title="Errors"></button>
+      <button id="badge-warnings" class="badge warn" hidden title="Warnings"></button>
+      <button class="tb-btn" id="btn-settings" title="Settings">
+        <svg viewBox="0 0 20 20" width="16" height="16"><path fill="currentColor" d="M11.3 1.5l.4 2.2c.5.2 1 .5 1.4.8l2.1-.8 1.3 2.3-1.7 1.4c.1.5.1 1.1 0 1.6l1.7 1.4-1.3 2.3-2.1-.8c-.4.3-.9.6-1.4.8l-.4 2.2H8.7l-.4-2.2c-.5-.2-1-.5-1.4-.8l-2.1.8-1.3-2.3 1.7-1.4a5 5 0 010-1.6L3.5 6l1.3-2.3 2.1.8c.4-.3.9-.6 1.4-.8l.4-2.2zM10 6.8a3.2 3.2 0 100 6.4 3.2 3.2 0 000-6.4z" transform="translate(0 1.5)"/></svg>
+      </button>
+      <button class="tb-btn" id="btn-more" title="Customize and control DevTools">
+        <svg viewBox="0 0 20 20" width="16" height="16"><circle cx="10" cy="4" r="1.6" fill="currentColor"/><circle cx="10" cy="10" r="1.6" fill="currentColor"/><circle cx="10" cy="16" r="1.6" fill="currentColor"/></svg>
+      </button>
+      <button class="tb-btn" id="btn-close" title="Close DevTools (F12)">
+        <svg viewBox="0 0 20 20" width="15" height="15"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.8"/></svg>
+      </button>
+    </div>
+  </header>
+  <main id="panels"></main>
+</div>
+<div id="overlay-root"></div>
+<script src="devtools.js"></script>
+</body>
+</html>
